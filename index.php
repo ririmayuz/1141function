@@ -28,8 +28,12 @@
 
 // update("items",$row);
 
-$data=['name'=>'1+1','cost'=>50,'stock'=>100,'price'=>75];
-insert('items',$data);
+$data=['id'=>5,
+       'name'=>'蘿蔔糕加蛋',
+       'cost'=>65,
+       'stock'=>20,
+       'price'=>95];
+save('items',$data);
 /* stars('正三角形', 15);
 stars('菱形', 15);
 stars('矩形', 15);
