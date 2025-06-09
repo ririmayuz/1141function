@@ -39,7 +39,6 @@ function find($table, $id)
 
 function update($table, $data)
 {
-
     global $pdo;
 
     $tmp = [];
@@ -56,7 +55,14 @@ function update($table, $data)
     //return $pdo->exec($sql);                           
 }
 
+function insert($table, $data){
+    global $pdo;
+    $keys=array_keys($data);
 
+    $sql="INSERT INTO $table (`".join("`,`",$keys)."`) values('".join("','",$data)."');";
+    echo $sql;
+    return $pdo->exec($sql);
+}
 
 function q($sql)
 {
