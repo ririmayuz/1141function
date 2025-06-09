@@ -11,8 +11,8 @@
 // $rows= all('sales');
 // dd($rows);
 
-$rows = all('sales',['quantity'=>2], ' Order by id DESC ');
-dd($rows);
+// $rows = all('sales',['quantity'=>2], ' Order by id DESC ');
+// dd($rows);
 
 // $sales= all ('sales',"where quantity >=2");
 // dd($sales);
@@ -42,4 +42,4 @@ stars('菱形', 15);
 stars('矩形', 15);
 stars('倒三角形', 15); */
 
-
+del('items', ['cost'=>25]);
