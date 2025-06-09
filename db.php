@@ -26,7 +26,7 @@ function find($table,$id){
         foreach($id as $key=>$value){
             $tmp[]="`$key`='$value'";
         }
-        $sql="SELECT * FROM $table WHERE ".join(" AND ",$id);
+        $sql="SELECT * FROM $table WHERE ".join(" AND ",$tmp);
     }else{
 
         $sql="SELECT * FROM $table WHERE id='$id'";
