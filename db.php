@@ -2,10 +2,26 @@
 $dsn="mysql:host=localhost;dbname=store;charset=utf8";
 $pdo=new PDO($dsn,'root','');
 
-function all($table,$where=null){
+/* all($table);
+all($table,$array=[]);
+all($table,$array,$str);
+all($table,$str); */
+
+function all($table,$array=null,$str=null){
     global $pdo;
-    $sql="SELECT * FROM $table $where";
-    //echo $sql;
+   
+    $sql="SELECT * FROM $table ";
+
+        if(is_array($array)){
+            $tmp=array2sql($array);
+            $sql = $sql ." WHERE ".join(" AND ", $tmp);
+        }else{
+            $sql .= $array;
+        }
+
+        $sql .= $str;
+ 
+    // echo $sql;
     $rows=$pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 

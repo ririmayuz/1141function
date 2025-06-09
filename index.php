@@ -11,6 +11,9 @@
 // $rows= all('sales');
 // dd($rows);
 
+$rows = all('sales',['quantity'=>2], ' Order by id DESC ');
+dd($rows);
+
 // $sales= all ('sales',"where quantity >=2");
 // dd($sales);
 
@@ -28,12 +31,12 @@
 
 // update("items",$row);
 
-$data=['id'=>5,
-       'name'=>'蘿蔔糕加蛋',
-       'cost'=>65,
-       'stock'=>20,
-       'price'=>95];
-save('items',$data);
+// $data=['id'=>5,
+//        'name'=>'蘿蔔糕加蛋',
+//        'cost'=>65,
+//        'stock'=>20,
+//        'price'=>95];
+// save('items',$data);
 /* stars('正三角形', 15);
 stars('菱形', 15);
 stars('矩形', 15);
