@@ -18,3 +18,8 @@ function dd($array){
     print_r($array);
     echo "</pre>";
 }
+
+function q($sql){
+    global $pdo;
+    return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
