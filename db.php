@@ -12,11 +12,28 @@ function all($table,$where=null){
 
 }
 
-
 function dd($array){
     echo "<pre>";
     print_r($array);
     echo "</pre>";
+}
+
+function find($table,$id){
+    global $pdo;
+
+    if(is_array($id)){
+        $tmp = [];
+        foreach($id as $key=>$value){
+            $tmp[]="`$key`='$value'";
+        }
+        $sql="SELECT * FROM $table WHERE ".join(" AND ",$id);
+    }else{
+
+        $sql="SELECT * FROM $table WHERE id='$id'";
+
+    }
+
+    return $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 }
 
 function q($sql){
